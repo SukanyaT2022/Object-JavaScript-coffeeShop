@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form>
+<label for="">Quantity</label>
+<input type="text" id="howMany"><!--use id to fetch value-->
+
+
+<label for="">Price</label>
+<input type="text" id="price"><!--use id to fetch value-->
+
+<input type = "button" value="Total Price" onclick="sum()">
+
+<input type = "text" id="totalPriceinBox">
+   </form> 
+ 
+
+<script>
+function coffee(){
+   this.coffeeType = " ";
+ this.coffeePrice = 0; 
+this.QtyOrdered = 0;
+this.totalPrice=function(){
+
+ var total =  this.coffeePrice * this.QtyOrdered
+return total
+}
+
+}
+
+// test
+function sum(){
+var c = new coffee()
+c.coffeePrice = parseInt(document.getElementById("price").value)
+c.QtyOrdered = parseInt(document.getElementById("howMany").value)
+result = c.totalPrice()
+document.getElementById("totalPriceinBox").value = result
+
+}
+
+</script>
+
+</body>
+</html>
