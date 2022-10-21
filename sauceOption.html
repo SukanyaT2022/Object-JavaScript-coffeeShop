@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<label >Choose Type of Thai Sauce</label>
+<select  id="sauceType">
+<option >Chili Sauce</option>
+<option >Peanut Sauce</option>
+<option >Sweet & Sour Sauce</option>
+<option >Curry Sauce</option>
+</select>
+
+<label>Quantity</label>
+<input type="number" id="Qty" >
+<label>Price Per item</label>
+<input type="number" id="pricePerItem" >
+<label>Total Price</label>
+<input type="number" id="totalPrice" >
+<input type="button" value="Total Price" onclick="totalPrice()">
+
+<script>
+function Sauce(){
+    this.sauceType = " ";
+    this.saucePrice = 0;
+    this.quantity = 0;
+    
+}
+function totalPrice(){
+    var s = new Sauce()
+s.sauceType = document.getElementById("sauceType").value;
+if (s.sauceType=="Chili Sauce"){
+    s.saucePrice = 5
+}
+else if (s.sauceType=="Peanut Sauce"){
+    s.saucePrice = 7
+}
+else if (s.sauceType=="Sweet & Sour Sauce"){
+    s.saucePrice = 8
+}
+
+else if (s.sauceType=="Curry Sauce"){
+    s.saucePrice = 10
+}
+s.quantity=parseInt(document.getElementById("Qty").value)
+document.getElementById("pricePerItem").value=s.saucePrice
+document.getElementById("totalPrice").value = s.quantity*s.saucePrice
+}
+
+
+
+
+
+
+
+
+</script>
+   
+</body>
+</html>
