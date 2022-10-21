@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+   <form>
+<label>Select Coffee Bean Type</label>
+<select  id="coffeeType">
+<option>Arabica</option>
+<option>Robusta</option>
+<option>Excelsa </option>
+<option>Liberica</option>
+
+</select>
+
+
+
+
+
+<label for="">Quantity</label>
+<input type="text" id="howMany"><!--use id to fetch value-->
+<br>
+
+
+<label for="">Price Per Item</label>
+<input type="text" id="price"><!--use id to fetch value-->
+<br>
+
+<input type = "button" value="Total Price" onclick="sum()">
+
+<input type = "text" id="totalPriceinBox">
+
+
+
+   </form> 
+ 
+
+<script>
+function coffee(){
+   this.coffeeType = " ";
+ this.coffeePrice = 0; 
+this.QtyOrdered = 0;
+this.totalPrice=function(){
+
+ var total =  this.coffeePrice * this.QtyOrdered
+return total
+}
+
+}
+
+// test
+function sum(){
+var c = new coffee()
+c.coffeeType = document.getElementById("coffeeType").value
+if(c.coffeeType=="Arabica"){
+    c.coffeePrice = 15
+}
+else if(c.coffeeType=="Robusta"){
+    c.coffeePrice = 16
+}
+else if(c.coffeeType=="Excelsa"){
+    c.coffeePrice = 18
+}
+
+else if(c.coffeeType=="Liberica"){
+    c.coffeePrice = 20
+}
+document.getElementById("price").value = c.coffeePrice
+
+c.QtyOrdered = parseInt(document.getElementById("howMany").value)
+result = c.totalPrice()
+document.getElementById("totalPriceinBox").value = result
+
+}
+
+</script>
+
+</body>
+</html>
